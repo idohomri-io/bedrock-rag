@@ -137,16 +137,16 @@ AWS credentials are resolved via AWS CLI (`aws configure`) locally, or via an IA
 2. Install Docker on the instance.
 3. Pull the image:
    ```bash
-   docker pull idohomriio/network-rag-web
+   docker pull ghcr.io/idohomri-io/bedrock-rag
    ```
 4. Create a `.env` file on the instance with your values, then run:
    ```bash
-   docker run -d -p 5000:5000 --env-file .env idohomriio/network-rag-web
+   docker run -d -p 5000:5000 --env-file .env ghcr.io/idohomri-io/bedrock-rag
    ```
 
 > AWS credentials inside the container are provided by the EC2 IAM Role automatically — no keys needed in the environment file. For local Docker runs, mount your `~/.aws` directory:
 > ```bash
-> docker run -d -p 5000:5000 --env-file .env -v ~/.aws:/root/.aws:ro idohomriio/network-rag-web
+> docker run -d -p 5000:5000 --env-file .env -v ~/.aws:/root/.aws:ro ghcr.io/idohomri-io/bedrock-rag
 > ```
 
 ---
