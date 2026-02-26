@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}KB Chat{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>KB Chat</h1>
+    <p class="muted">
+        Ask questions about your knowledge base and get intelligent answers
+    </p>
+</div>
+
+<div class="input-section">
+    <label for="q">Ask a question</label>
+    <textarea
+        id="q"
+        rows="4"
+        placeholder="e.g., Summarize the key points of the uploaded document."
+    ></textarea>
+
+    <div class="row">
+        <button id="askBtn" type="button">Ask Question</button>
+        <span id="status" class="status"></span>
+    </div>
+</div>
+
+<section class="card answer-card">
+    <h2>Answer</h2>
+    <div class="answer-container">
+        <pre id="answer" class="answer"></pre>
+    </div>
+</section>
+<section class="card sources-card">
+    <h2>Sources</h2>
+    <div id="sources"></div>
+</section>
+
+{% endblock %}

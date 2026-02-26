@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}KB Chat{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="{{ url_for('index') }}" class="nav-logo">KB Chat</a>
+        <div class="nav-links">
+          <a href="{{ url_for('index') }}" class="nav-link">Chat</a>
+          <a href="{{ url_for('upload_page') }}" class="nav-link">Upload</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

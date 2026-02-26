@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Knowledge Files{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>Upload Knowledge Files</h1>
+    <p class="muted">
+      Upload a .pdf or .txt file to S3 (stored under <code>data/</code>). The Knowledge Base will ingest it after sync.
+    </p>
+  </div>
+
+  <section class="card upload-card">
+    <form id="uploadForm">
+      <label for="file">Select File (PDF or TXT)</label>
+      <input id="file" name="file" type="file" accept=".pdf,.txt" required />
+
+      <div class="row">
+        <button id="uploadBtn" type="submit">Upload File</button>
+        <a class="link" href="{{ url_for('index') }}">← Back to Chat</a>
+      </div>
+
+      <div class="upload-feedback">
+        <p id="uploadStatus" class="status"></p>
+        <p id="uploadKey" class="muted"></p>
+      </div>
+    </form>
+  </section>
+{% endblock %}
+
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+{% endblock %}
